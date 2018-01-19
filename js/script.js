@@ -1,6 +1,6 @@
 $(function() {
   function randomString() {
-    var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
+    var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var str = '';
     for (var i = 0; i < 10; i++) {
         str += chars[Math.floor(Math.random() * chars.length)];
@@ -8,6 +8,7 @@ $(function() {
     return str;
   }
 
+  // funkcja konstruująca kolumnę
   function Column(name) {
     var self = this;
 
@@ -50,6 +51,7 @@ $(function() {
     }
   };
 
+  //funkcja konstruująca kartki:
   function Card(description) {
     var self = this;
 
@@ -81,6 +83,7 @@ $(function() {
     }
   }
 
+  //tworzenie obiektu tablicy
   var board = {
     name: 'Kanban Board',
     addColumn: function(column) {
@@ -97,8 +100,7 @@ $(function() {
    }).disableSelection();
   }
 
-  $('.create-column')
-  .click(function(){
+  $('.create-column').click(function(){
   var name = prompt('Enter a column name');
   var column = new Column(name);
       board.addColumn(column);
@@ -125,12 +127,7 @@ $(function() {
 })
 
 
-/*//TABLICA - literał obiektu
-var table = {
-  name: 'project',
-  element: <jQuery element>
-};
-addColumn: function()
+/*
 
 //KOLUMNA
 var column = {
